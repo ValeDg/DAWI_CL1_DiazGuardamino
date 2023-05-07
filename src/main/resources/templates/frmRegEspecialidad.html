@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="layaot::head">
+
+</head>
+<body>
+	<nav th:insert="layaot::menu"></nav>
+	
+	<div class="card">
+		<div class="card-header">Registro de Especialidad"</div>
+		<div class="card-body">
+		<form th:action="@{/Especialidad/frmRegEspecialidad}" method="post" th:object="${especialidadForm}">
+			<div class="mb-3">
+	  		<label for="exampleFormControlInput1" class="form-label">Nombre Especialidad</label>
+	  		<input type="text" class="form-control" id="exampleFormControlInput1" th:field="*{nomEsp}">
+	  		
+	  		<label for="exampleFormControlInput1" class="form-label">costo</label>
+	  		<input type="text" class="form-control" id="exampleFormControlInput1" th:field="*{costo}">
+			</div>
+			
+			<div class="text_center">
+			   <button type="submit" class="btn btn-primary">Registrar</button>
+			</div>
+			
+			<div>
+				<div th:if="${visualizar}" class="alert alert-success" role="alert">
+				<span th:text="${respuesta}?: ''"></span>
+				</div>
+			</div>
+			
+		</form>
+		
+	</div>
+	</div>
+	
+</body>
+</html>
